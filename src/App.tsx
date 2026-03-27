@@ -128,13 +128,15 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-col items-center gap-4"
               >
-                <a 
+                <motion.a 
                   href={CHECKOUT_URL}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                   className="group relative flex items-center gap-2 rounded-2xl bg-rose-600 px-8 py-5 text-xl font-black text-white shadow-xl shadow-rose-200 transition-all hover:bg-rose-700 hover:-translate-y-1 active:scale-95"
                 >
                   QUERO ACESSO IMEDIATO
                   <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-                </a>
+                </motion.a>
                 <div className="flex items-center gap-2 text-sm font-medium text-slate-500">
                   <ShieldCheck className="h-4 w-4 text-rose-600" />
                   Garantia de 7 dias ou seu dinheiro de volta
@@ -739,13 +741,15 @@ export default function App() {
                     </div>
                   </div>
 
-                  <a 
+                  <motion.a 
                     href={CHECKOUT_URL}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                     className="w-full group relative flex items-center justify-center gap-3 rounded-2xl bg-rose-600 px-8 py-7 text-2xl font-black text-white shadow-2xl shadow-rose-200 transition-all hover:bg-rose-700 hover:-translate-y-1 active:scale-[0.98]"
                   >
                     QUERO MEU ACESSO AGORA
                     <ArrowRight className="h-7 w-7 transition-transform group-hover:translate-x-2" />
-                  </a>
+                  </motion.a>
 
                   <div className="mt-8 flex flex-col gap-4 w-full">
                     <div className="flex items-center justify-center gap-6">
@@ -827,13 +831,15 @@ export default function App() {
                 <p className="text-rose-100 text-sm">Economizar muito e até ganhar dinheiro vendendo para outros.</p>
               </div>
             </div>
-            <a 
+            <motion.a 
               href={CHECKOUT_URL}
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               className="group relative inline-flex items-center gap-2 rounded-2xl bg-rose-600 px-10 py-6 text-2xl font-black text-white shadow-xl shadow-rose-500/20 transition-all hover:bg-rose-700 hover:-translate-y-1 active:scale-95"
             >
               QUERO ACESSO AGORA
               <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </a>
+            </motion.a>
           </div>
         </section>
       </main>
