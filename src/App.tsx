@@ -299,11 +299,12 @@ export default function App() {
           </div>
 
           <div className="flex flex-col gap-8 overflow-x-hidden">
+            {/* Row 1 */}
             <div className="relative flex">
               <motion.div
                 className="flex gap-8 px-4"
                 animate={{
-                  x: ["-50%", "0%"],
+                  x: ["0%", "-50%"],
                 }}
                 transition={{
                   x: {
@@ -320,17 +321,66 @@ export default function App() {
                   "https://i.ibb.co/z909tgK/Screenshot-2026-03-22-17-27-16-627-com-canva-editor-jpg.jpg",
                   "https://i.ibb.co/qYWtnstX/Screenshot-2026-03-22-17-27-46-001-com-canva-editor-jpg.jpg",
                   "https://i.ibb.co/N6B41JYq/Screenshot-2026-03-22-17-27-38-698-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/SSBzN3q/Screenshot-2026-03-22-17-26-50-624-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/39Jr0md4/Screenshot-2026-03-22-17-27-21-550-com-canva-editor-jpg.jpg",
                   // Duplicate for seamless loop
                   "https://i.ibb.co/gZ5fWN91/Screenshot-2026-03-22-17-27-47-779-com-canva-editor-jpg.jpg",
                   "https://i.ibb.co/0RgR1JCs/Screenshot-2026-03-22-17-27-05-107-com-canva-editor-jpg.jpg",
                   "https://i.ibb.co/z909tgK/Screenshot-2026-03-22-17-27-16-627-com-canva-editor-jpg.jpg",
                   "https://i.ibb.co/qYWtnstX/Screenshot-2026-03-22-17-27-46-001-com-canva-editor-jpg.jpg",
                   "https://i.ibb.co/N6B41JYq/Screenshot-2026-03-22-17-27-38-698-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/SSBzN3q/Screenshot-2026-03-22-17-26-50-624-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/39Jr0md4/Screenshot-2026-03-22-17-27-21-550-com-canva-editor-jpg.jpg",
                 ].map((src, index) => (
                   <div key={index} className="h-64 w-64 flex-shrink-0 overflow-hidden rounded-2xl shadow-xl border-4 border-white bg-white">
                     <img 
                       src={src} 
                       alt={`Molde Editável Canva ${index + 1}`} 
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Row 2 */}
+            <div className="relative flex">
+              <motion.div
+                className="flex gap-8 px-4"
+                animate={{
+                  x: ["-50%", "0%"],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 30,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {[
+                  "https://i.ibb.co/6RtS5RQr/Screenshot-2026-03-22-17-26-53-008-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/N6TYpbwk/Screenshot-2026-03-22-17-27-02-742-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/rfGXtHjB/Screenshot-2026-03-22-17-26-59-718-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/k22m824D/Screenshot-2026-03-22-17-27-07-612-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/LX6pWH18/Screenshot-2026-03-22-17-27-44-135-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/JWPjJw5r/Screenshot-2026-03-22-17-27-19-053-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/w2xwMrg/Screenshot-2026-03-22-17-27-40-543-com-canva-editor-jpg.jpg",
+                  // Duplicate for seamless loop
+                  "https://i.ibb.co/6RtS5RQr/Screenshot-2026-03-22-17-26-53-008-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/N6TYpbwk/Screenshot-2026-03-22-17-27-02-742-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/rfGXtHjB/Screenshot-2026-03-22-17-26-59-718-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/k22m824D/Screenshot-2026-03-22-17-27-07-612-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/LX6pWH18/Screenshot-2026-03-22-17-27-44-135-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/JWPjJw5r/Screenshot-2026-03-22-17-27-19-053-com-canva-editor-jpg.jpg",
+                  "https://i.ibb.co/w2xwMrg/Screenshot-2026-03-22-17-27-40-543-com-canva-editor-jpg.jpg",
+                ].map((src, index) => (
+                  <div key={index} className="h-64 w-64 flex-shrink-0 overflow-hidden rounded-2xl shadow-xl border-4 border-white bg-white">
+                    <img 
+                      src={src} 
+                      alt={`Molde Editável Canva ${index + 6}`} 
                       className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
@@ -428,26 +478,39 @@ export default function App() {
         </section>
 
         {/* How it works */}
-        <section className="py-24 bg-white">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold sm:text-4xl">Como funciona?</h2>
-              <p className="mt-4 text-slate-600">Simples como 1, 2, 3...</p>
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl font-bold sm:text-4xl text-slate-900">Como funciona?</h2>
+              <p className="mt-2 text-slate-500 font-medium">Simples como 1, 2, 3...</p>
             </div>
-            <div className="grid gap-12 md:grid-cols-4">
-              {[
-                { step: "01", title: "Acesse", desc: "Abra os moldes diretamente no seu Canva." },
-                { step: "02", title: "Edite", desc: "Mude nome, idade ou o tema da festa." },
-                { step: "03", title: "Imprima", desc: "Use sua impressora caseira em papel A4." },
-                { step: "04", title: "Monte", desc: "Recorte, cole e pronto! Sua festa está linda." }
-              ].map((item, i) => (
-                <div key={i} className="relative text-center">
-                  <div className="mb-6 inline-block text-6xl font-black text-slate-100">{item.step}</div>
-                  <h3 className="mb-2 text-xl font-bold text-slate-900">{item.title}</h3>
-                  <p className="text-slate-600 text-sm">{item.desc}</p>
-                  {i < 3 && <ArrowRight className="absolute top-1/4 -right-6 hidden h-6 w-6 text-slate-200 md:block" />}
-                </div>
-              ))}
+            
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                {[
+                  { step: "01", title: "Acesse", desc: "Abra os moldes no seu Canva.", icon: Smartphone },
+                  { step: "02", title: "Edite", desc: "Mude nome, idade ou tema.", icon: Edit3 },
+                  { step: "03", title: "Imprima", desc: "Use sua impressora em papel A4.", icon: Printer },
+                  { step: "04", title: "Monte", desc: "Recorte, cole e pronto!", icon: Gift }
+                ].map((item, i) => (
+                  <div key={i} className="group relative flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1">
+                    <div className="absolute -top-3 -left-3 flex h-8 w-8 items-center justify-center rounded-lg bg-rose-600 text-xs font-bold text-white shadow-lg">
+                      {item.step}
+                    </div>
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mb-1 text-lg font-bold text-slate-900">{item.title}</h3>
+                    <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+                    
+                    {i < 3 && (
+                      <div className="absolute top-1/2 -right-4 hidden lg:block translate-x-1/2 -translate-y-1/2 z-10">
+                        <ArrowRight className="h-5 w-5 text-slate-300" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -641,10 +704,10 @@ export default function App() {
                   </a>
 
                   <div className="mt-8 flex flex-col gap-4 w-full">
-                    <div className="flex items-center justify-center gap-4">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_Pix.png" alt="Pix" className="h-4 opacity-50 grayscale hover:grayscale-0 transition-all" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 opacity-50 grayscale hover:grayscale-0 transition-all" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-6 opacity-50 grayscale hover:grayscale-0 transition-all" />
+                    <div className="flex items-center justify-center gap-6">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_Pix.png/800px-Logo_Pix.png" alt="Pix" className="h-6 sm:h-8 opacity-60 hover:opacity-100 transition-all" referrerPolicy="no-referrer" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/800px-Visa_Inc._logo.svg.png" alt="Visa" className="h-6 sm:h-8 opacity-60 hover:opacity-100 transition-all" referrerPolicy="no-referrer" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/800px-Mastercard-logo.svg.png" alt="Mastercard" className="h-8 sm:h-10 opacity-60 hover:opacity-100 transition-all" referrerPolicy="no-referrer" />
                     </div>
                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Pagamento 100% Seguro via Criptografia</p>
                   </div>
