@@ -404,7 +404,7 @@ export default function App() {
                 { icon: Printer, title: "Pronto para Imprimir", desc: "Arquivos adaptados para papel A4 comum. Imprima em casa." },
                 { icon: Edit3, title: "100% Editável", desc: "Mude cores, textos, imagens e temas diretamente no Canva." }
               ].map((benefit, i) => (
-                <div key={i} className="rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-all hover:shadow-md">
+                <div key={i} className="flex flex-col items-center text-center rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-all hover:shadow-md">
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600">
                     <benefit.icon className="h-6 w-6" />
                   </div>
@@ -428,7 +428,6 @@ export default function App() {
                     "200 kits festa completos e prontos",
                     "1.000 moldes 100% editáveis no Canva",
                     "900 topos de bolo profissionais",
-                    "Moldes exclusivos de Dia das Mães",
                     "Bônus: Cartão SUS personalizado"
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4">
@@ -535,7 +534,7 @@ export default function App() {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 bg-white rounded-3xl p-8 text-slate-900 shadow-2xl">
+              <div className="flex-1 bg-white rounded-3xl p-8 text-slate-900 shadow-2xl flex flex-col items-center text-center">
                 <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600">
                   <DollarSign className="h-6 w-6" />
                 </div>
@@ -543,7 +542,7 @@ export default function App() {
                 <p className="text-lg text-slate-600 leading-relaxed italic">
                   "Com esses moldes, você pode transformar uma simples folha A4 em produtos que podem ser vendidos por R$20 ou mais."
                 </p>
-                <div className="mt-8 border-t border-slate-100 pt-8">
+                <div className="mt-8 border-t border-slate-100 pt-8 w-full">
                   <p className="text-sm font-bold text-rose-600 uppercase tracking-wider">Oportunidade de Renda</p>
                   <p className="mt-2 text-slate-500">Milhares de pessoas já estão faturando alto com papelaria personalizada usando nossos moldes.</p>
                 </div>
@@ -557,22 +556,53 @@ export default function App() {
           <div className="container mx-auto px-4">
             <div className="rounded-3xl bg-slate-900 p-8 md:p-16 text-white overflow-hidden relative">
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl"></div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-rose-500/20 px-4 py-1 text-sm font-bold text-rose-400 ring-1 bg-rose-500/30">
                   <Gift className="h-4 w-4" />
                   <span>BÔNUS EXCLUSIVOS</span>
                 </div>
                 <h2 className="mb-12 font-display text-3xl font-bold sm:text-5xl">Ao adquirir hoje, você também recebe:</h2>
-                <div className="grid gap-8 sm:grid-cols-3">
+                <div className="grid gap-8 sm:grid-cols-2 w-full max-w-2xl">
                   {[
                     { title: "Cartão SUS Personalizado", desc: "O bônus queridinho para lembrancinhas criativas." },
-                    { title: "900 Topos de Bolo", desc: "Modelos profissionais para todas as ocasiões." },
-                    { title: "Moldes de Dia das Mães", desc: "Kits exclusivos para faturar alto em datas comemorativas." }
+                    { 
+                      title: "900 Topos de Bolo", 
+                      desc: "Modelos profissionais para todas as ocasiões.",
+                      images: [
+                        "https://i.ibb.co/XxsZmx9V/John-2-aninhos-uma-fofura-s-diversas-t-cnicas-e-muito-amor-na-finaliza-o-Bolo-dcakesdoce.jpg",
+                        "https://i.ibb.co/VY44ZfL9/Um-tema-super-querido-da-crian-ada-patrulha-canina-Pedro-3-aninhos-Bolo-dcakesdoceria-Topo.jpg",
+                        "https://i.ibb.co/VphQTG60/Lucas-no-seu-primeiro-m-s-uma-fofura-Bolo-dcakesdoceria-Topo-laranpersonalizados-So.jpg",
+                        "https://i.ibb.co/My9Xc6h1/O-tempo-voa-Matheus-3-meses-Bolo-dcakesdoceria-Topo-de-bolo-laranpersonalizados-Solic.jpg",
+                        "https://i.ibb.co/VWgQK2CS/A-turma-mais-charmosa-e-querida-pela-crian-ada-a-patrulha-Maria-Cec-lia-4-aninhos-Bol.jpg"
+                      ]
+                    }
                   ].map((bonus, i) => (
-                    <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <div key={i} className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors overflow-hidden">
                       <div className="mb-4 text-rose-400 font-black text-2xl">🎁</div>
                       <h3 className="text-xl font-bold mb-2">{bonus.title}</h3>
-                      <p className="text-slate-400 text-sm">{bonus.desc}</p>
+                      <p className="text-slate-400 text-sm mb-4">{bonus.desc}</p>
+                      
+                      {bonus.images && (
+                        <div className="w-full mt-2 overflow-hidden relative">
+                          <motion.div 
+                            className="flex gap-2"
+                            animate={{ x: [0, -400] }}
+                            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                          >
+                            {[...bonus.images, ...bonus.images].map((img, idx) => (
+                              <img 
+                                key={idx} 
+                                src={img} 
+                                alt={`Topo ${idx}`} 
+                                className="h-20 w-20 object-cover rounded-lg flex-shrink-0"
+                                referrerPolicy="no-referrer"
+                              />
+                            ))}
+                          </motion.div>
+                          <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                          <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
