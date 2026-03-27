@@ -564,16 +564,30 @@ export default function App() {
                 <h2 className="mb-12 font-display text-3xl font-bold sm:text-5xl">Ao adquirir hoje, você também recebe:</h2>
                 <div className="grid gap-8 sm:grid-cols-2 w-full max-w-2xl">
                   {[
-                    { title: "Cartão SUS Personalizado", desc: "O bônus queridinho para lembrancinhas criativas." },
+                    { 
+                      title: "Cartão SUS Personalizado", 
+                      desc: "O bônus queridinho para lembrancinhas criativas.",
+                      aspect: "w-32",
+                      images: [
+                        "https://i.ibb.co/nNYRjNCC/Whats-App-Image-2026-03-26-at-21-27-10.jpg",
+                        "https://i.ibb.co/7dhX20X0/Whats-App-Image-2026-03-26-at-21-27-10-1.jpg",
+                        "https://i.ibb.co/4ZcTSkVt/Whats-App-Image-2026-03-26-at-21-27-11.jpg",
+                        "https://i.ibb.co/Y4b9RPsx/Whats-App-Image-2026-03-26-at-21-27-11-1.jpg",
+                        "https://i.ibb.co/XhNL2c3/Whats-App-Image-2026-03-26-at-21-27-11-2.jpg"
+                      ]
+                    },
                     { 
                       title: "900 Topos de Bolo", 
                       desc: "Modelos profissionais para todas as ocasiões.",
+                      aspect: "w-20",
                       images: [
                         "https://i.ibb.co/XxsZmx9V/John-2-aninhos-uma-fofura-s-diversas-t-cnicas-e-muito-amor-na-finaliza-o-Bolo-dcakesdoce.jpg",
                         "https://i.ibb.co/VY44ZfL9/Um-tema-super-querido-da-crian-ada-patrulha-canina-Pedro-3-aninhos-Bolo-dcakesdoceria-Topo.jpg",
                         "https://i.ibb.co/VphQTG60/Lucas-no-seu-primeiro-m-s-uma-fofura-Bolo-dcakesdoceria-Topo-laranpersonalizados-So.jpg",
                         "https://i.ibb.co/My9Xc6h1/O-tempo-voa-Matheus-3-meses-Bolo-dcakesdoceria-Topo-de-bolo-laranpersonalizados-Solic.jpg",
-                        "https://i.ibb.co/VWgQK2CS/A-turma-mais-charmosa-e-querida-pela-crian-ada-a-patrulha-Maria-Cec-lia-4-aninhos-Bol.jpg"
+                        "https://i.ibb.co/VWgQK2CS/A-turma-mais-charmosa-e-querida-pela-crian-ada-a-patrulha-Maria-Cec-lia-4-aninhos-Bol.jpg",
+                        "https://i.ibb.co/pVFhWWQ/Arrai-do-Jos-Rai-1-aninho-com-muiiiiito-forr-e-climinha-do-S-o-Jo-o-Bolo-polydoces-T.jpg",
+                        "https://i.ibb.co/FLQqkCd4/Save-Clip-App-651475362-17850942597687347-5504981642704215487-n.jpg"
                       ]
                     }
                   ].map((bonus, i) => (
@@ -586,15 +600,15 @@ export default function App() {
                         <div className="w-full mt-2 overflow-hidden relative">
                           <motion.div 
                             className="flex gap-2"
-                            animate={{ x: [0, -400] }}
-                            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                            animate={{ x: [0, -(bonus.images.length * (bonus.aspect === 'w-32' ? 136 : 88))] }}
+                            transition={{ duration: bonus.images.length * 2, repeat: Infinity, ease: "linear" }}
                           >
                             {[...bonus.images, ...bonus.images].map((img, idx) => (
                               <img 
                                 key={idx} 
                                 src={img} 
-                                alt={`Topo ${idx}`} 
-                                className="h-20 w-20 object-cover rounded-lg flex-shrink-0"
+                                alt={`${bonus.title} ${idx}`} 
+                                className={`h-20 ${bonus.aspect} object-contain bg-white/10 rounded-lg flex-shrink-0`}
                                 referrerPolicy="no-referrer"
                               />
                             ))}
